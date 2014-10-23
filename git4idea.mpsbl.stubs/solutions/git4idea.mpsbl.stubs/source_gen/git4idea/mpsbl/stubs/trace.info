@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeRef="r:033a9404-186e-4e99-ba7f-cfff7467d710(git4idea.mpsbl.stubs)/3604718567736950013">
+    <unitInfo nodeId="3604718567736950013" fileName="plugin.xml" startLine="1" startPosition="0" endLine="17" endPosition="14" unitName="git4idea.mpsbl.stubs.plugin" />
+  </root>
+  <root nodeRef="r:033a9404-186e-4e99-ba7f-cfff7467d710(git4idea.mpsbl.stubs)/3604718567736993645">
+    <unitInfo nodeId="3604718567736993645" fileName="git4idea.mpsbl.stubs.xml" startLine="1" startPosition="0" endLine="198" endPosition="10" unitName="git4idea.mpsbl.stubs.git4idea$mpsbl$stubs" />
+  </root>
+</debugInfo>
+
