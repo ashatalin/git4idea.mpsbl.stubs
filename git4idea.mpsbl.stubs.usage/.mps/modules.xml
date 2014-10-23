@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MPSProject">
+    <projectModules>
+      <modulePath path="$PROJECT_DIR$/solutions/git4idea.mpsbl.stubs.usage.actions/git4idea.mpsbl.stubs.usage.actions.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/solutions/git4idea.mpsbl.stubs.usage.build/git4idea.mpsbl.stubs.usage.build.msd" folder="" />
+    </projectModules>
+  </component>
+</project>
+

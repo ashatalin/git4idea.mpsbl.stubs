@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependenciesRoot>
+  <dependency className="git4idea.mpsbl.stubs.usage.build.git4idea.mpsbl.stubs.usage" file="git4idea.mpsbl.stubs.usage.xml" />
+</dependenciesRoot>
+
