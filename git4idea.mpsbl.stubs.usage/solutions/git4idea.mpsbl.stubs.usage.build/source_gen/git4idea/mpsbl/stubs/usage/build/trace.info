@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
   <root nodeRef="r:f20ae61d-c805-4697-bb22-8fff0976b0d9(git4idea.mpsbl.stubs.usage.build)/8035612898894213068">
-    <unitInfo nodeId="8035612898894213068" fileName="git4idea.mpsbl.stubs.usage.xml" startLine="1" startPosition="0" endLine="288" endPosition="10" unitName="git4idea.mpsbl.stubs.usage.build.git4idea$mpsbl$stubs$usage" />
+    <file name="git4idea.mpsbl.stubs.usage.xml">
+      <unit id="8035612898894213068" at="1,0,300,10" name="git4idea.mpsbl.stubs.usage.build.git4idea$mpsbl$stubs$usage" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

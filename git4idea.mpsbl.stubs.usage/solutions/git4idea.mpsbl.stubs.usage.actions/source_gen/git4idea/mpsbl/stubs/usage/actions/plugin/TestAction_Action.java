@@ -8,24 +8,21 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import org.apache.log4j.Level;
-import org.eclipse.jgit.api.ApplyResult;
+import org.jetbrains.git4idea.ssh.SSHConfig;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
 public class TestAction_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public TestAction_Action() {
     super("Test Action", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
@@ -36,19 +33,11 @@ public class TestAction_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
-  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
-    if (!(super.collectActionData(event, _params))) {
-      return false;
-    }
-    return true;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      ApplyResult r = new ApplyResult();
+      SSHConfig instanceFromPlugin = new SSHConfig();
       if (LOG.isInfoEnabled()) {
-        LOG.info("Executed: " + r.toString());
+        LOG.info("Executed: " + instanceFromPlugin.toString());
       }
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Level.ERROR)) {
@@ -56,6 +45,5 @@ public class TestAction_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(TestAction_Action.class);
 }

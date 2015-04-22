@@ -9,7 +9,6 @@ import org.apache.log4j.LogManager;
 public class MyGroup_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = LogManager.getLogger(MyGroup_ActionGroup.class);
   public static final String ID = "git4idea.mpsbl.stubs.usage.actions.plugin.MyGroup_ActionGroup";
-
   public MyGroup_ActionGroup() {
     super("MyGroup", ID);
     this.setIsInternal(false);

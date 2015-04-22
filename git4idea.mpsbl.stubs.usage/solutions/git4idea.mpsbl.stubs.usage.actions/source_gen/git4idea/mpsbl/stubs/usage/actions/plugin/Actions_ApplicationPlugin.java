@@ -8,21 +8,17 @@ import jetbrains.mps.ide.actions.ModelActions_ActionGroup;
 
 public class Actions_ApplicationPlugin extends BaseApplicationPlugin {
   private PluginId myId = PluginId.getId("git4idea.mpsbl.stubs.usage.actions");
-
   public Actions_ApplicationPlugin() {
   }
-
   public PluginId getId() {
     return myId;
   }
-
   public void createGroups() {
     // actions w/o parameters 
     addAction(new TestAction_Action());
     // groups 
     addGroup(new MyGroup_ActionGroup());
   }
-
   public void adjustRegularGroups() {
     insertGroupIntoAnother(MyGroup_ActionGroup.ID, ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_newActions);
   }

@@ -1,21 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-8m3hz9grhcqbnv64n5vaohboc0f05xn">
-  <dep model="r:54537613-52b5-40a8-b223-e87f0960b04f(jetbrains.mps.build.mps.generator.template.main@generator)" hash="-41bkl3hsv7tltenb2y8p4edyuahfxfl" />
-  <dep model="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)" hash="16uetnj2j6v04lnnqhlgd5br52635ao" />
-  <dep model="r:d8d06a40-eb90-4ad9-a679-19e3fc235859(jetbrains.mps.build.workflow.generator.template.main@generator)" hash="2z1ts4v77srp8lktdojvl9w7aby1kwi" />
-  <dep model="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)" hash="1zcaenwdxabv98ggujzfb757e5odwn9" />
-  <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" hash="-6he4i96uisto2i1kh4g6wt0gjbmjfw2" />
-  <common hash="9mp1vqa7fm2d4b17ie98vi6rivi3994" />
-  <source id="3604718567736993645" name="git4idea.mpsbl.stubs" hash="do2uug53vwv8s9t7uvnsbmczjm7dy2r">
-    <dep model="r:54537613-52b5-40a8-b223-e87f0960b04f(jetbrains.mps.build.mps.generator.template.main@generator)" />
-    <dep model="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)" />
-    <dep model="r:d8d06a40-eb90-4ad9-a679-19e3fc235859(jetbrains.mps.build.workflow.generator.template.main@generator)" />
-    <dep model="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)" />
-    <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" />
-    <file name="git4idea.mpsbl.stubs.xml" />
-  </source>
-  <source id="3604718567736950013" name="plugin" hash="-1yt3h0evi5vup6fe9wcf4io1wj2kk0a">
-    <file name="plugin.xml" />
-  </source>
-</dependencies>
+<dependencies version="2" modelHash="-9piwo9bx4afio2a9thgvn9eg0xb4p53" />
 

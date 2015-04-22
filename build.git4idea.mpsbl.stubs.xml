@@ -3,8 +3,8 @@
   <property name="build.dir" location="build" />
   <property name="build.tmp" location="${build.dir}/tmp/git4idea.mpsbl.stubs" />
   <property name="build.layout" location="${build.dir}/artifacts/git4idea.mpsbl.stubs" />
-  <property name="mps_home" location="${basedir}/../../MPS_executables/3.1.5/MPS 3.1.app/Contents" />
-  <property name="git4idea_home" location="${basedir}/../../MPS_executables/3.1.5/MPS 3.1.app/Contents/plugins/git4idea" />
+  <property name="mps_home" location="${basedir}/../../MPS_executables/3.2.1/MPS 3.2.app/Contents" />
+  <property name="git4idea_home" location="${basedir}/../../MPS_executables/3.2.1/MPS 3.2.app/Contents/plugins/git4idea" />
   <property name="artifacts.mps" location="${mps_home}" />
   <property file="${artifacts.mps}/build.properties" prefix="import.mps" />
   <property name="mps.build.number" value="${import.mps.mps.build.number}" />
@@ -32,13 +32,13 @@
       <fileset file="${git4idea_home}/lib/ini4j-0.5.2-patched.jar" />
     </copy>
     <copy todir="${build.layout}/git4idea_jars">
-      <fileset file="${git4idea_home}/lib/org.eclipse.jgit-2.1.0.201209190230-r.jar" />
-    </copy>
-    <copy todir="${build.layout}/git4idea_jars">
       <fileset file="${git4idea_home}/lib/resources_en.jar" />
     </copy>
     <copy todir="${build.layout}/git4idea_jars">
       <fileset file="${git4idea_home}/lib/trilead-ssh2.jar" />
+    </copy>
+    <copy todir="${build.layout}/git4idea_jars">
+      <fileset file="${git4idea_home}/lib/remote-servers-git.jar" />
     </copy>
     <mkdir dir="${build.tmp}/default/git4idea.mpsbl.stubs.zip" />
     <mkdir dir="${build.tmp}/default/git4idea.mpsbl.stubs.zip/git4idea.mpsbl.stubs" />
@@ -51,9 +51,9 @@
         <library jar="/plugins/git4idea/lib/git4idea-rt.jar" />
         <library jar="/plugins/git4idea/lib/git4idea.jar" />
         <library jar="/plugins/git4idea/lib/ini4j-0.5.2-patched.jar" />
-        <library jar="/plugins/git4idea/lib/org.eclipse.jgit-2.1.0.201209190230-r.jar" />
         <library jar="/plugins/git4idea/lib/resources_en.jar" />
         <library jar="/plugins/git4idea/lib/trilead-ssh2.jar" />
+        <library jar="/plugins/git4idea/lib/remote-servers-git.jar" />
         <sources jar="git4idea.mpsbl.stubs-src.jar" descriptor="git4idea.mpsbl.stubs.msd" />
       </module>
     </echoxml>
@@ -102,7 +102,7 @@
   
   <target name="generate" depends="declare-mps-tasks, fetchDependencies">
     <echo message="generating" />
-    <generate strictMode="true" parallelMode="true" parallelThreads="8" useInplaceTransform="false" hideWarnings="false" fork="true">
+    <generate strictMode="true" parallelMode="true" parallelThreads="8" useInplaceTransform="false" hideWarnings="false" createStaticRefs="true" fork="true" targetJavaVersion="1.6">
       <plugin path="${artifacts.mps}/plugins/mps-build" />
       <plugin path="${artifacts.mps}/plugins/mps-core/META-INF/plugin.xml/../.." />
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
@@ -116,17 +116,20 @@
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.jar" />
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.tuples.jar" />
+      <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs/jetbrains.mps.baseLanguage.unitTest.libs.jar" />
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguageInternal.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.actions.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.behavior.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.checkedName.jar" />
+      <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.classLike.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.constraints.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.editor.jar" />
-      <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.findUsages.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.generator.generationContext.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.generator.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.intentions.jar" />
+      <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.migration.jar" />
+      <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.migration.runtime.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.pattern.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.plugin.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.project.jar" />
@@ -139,10 +142,11 @@
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.sharedConcepts.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.smodel.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.structure.jar" />
-      <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.stubs.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.textGen.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.typesystem.jar" />
+      <library file="${artifacts.mps}/languages/make/jetbrains.mps.make.reduced.jar" />
+      <library file="${artifacts.mps}/languages/make/jetbrains.mps.tool.gentest.jar" />
       <library file="${artifacts.mps}/languages/xml/jetbrains.mps.core.xml.jar" />
       <library file="${artifacts.mps}/lib/mps-closures.jar" />
       <library file="${artifacts.mps}/lib/mps-collections.jar" />
@@ -150,6 +154,8 @@
       <library file="${artifacts.mps}/lib/mps-editor.jar" />
       <library file="${artifacts.mps}/lib/mps-openapi.jar" />
       <library file="${artifacts.mps}/lib/mps-platform.jar" />
+      <library file="${artifacts.mps}/lib/mps-test.jar" />
+      <library file="${artifacts.mps}/lib/mps-tool.jar" />
       <library file="${artifacts.mps}/lib/mps-tuples.jar" />
       <library file="${artifacts.mps}/plugins/mps-build/languages/build/jetbrains.mps.build.jar" />
       <library file="${artifacts.mps}/plugins/mps-build/languages/build/jetbrains.mps.build.mps.jar" />
@@ -173,23 +179,39 @@
   
   <target name="makeDependents" />
   
-  <target name="java.compile.git4idea.mpsbl.stubs">
+  <target name="java.compile.git4idea.mpsbl.stubs" depends="fetchDependencies">
     <mkdir dir="${basedir}/git4idea.mpsbl.stubs/solutions/git4idea.mpsbl.stubs/source_gen" />
     <mkdir dir="${build.tmp}/java/out/git4idea.mpsbl.stubs" />
-    <javac destdir="${build.tmp}/java/out/git4idea.mpsbl.stubs" fork="true" includeantruntime="false">
+    <javac destdir="${build.tmp}/java/out/git4idea.mpsbl.stubs" fork="true" includeantruntime="false" source="1.6" target="1.6">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${basedir}/git4idea.mpsbl.stubs/solutions/git4idea.mpsbl.stubs/source_gen" />
       </src>
       <classpath>
+        <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-closures.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-collections.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-tuples.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-core.jar" />
         <fileset file="${git4idea_home}/lib/git4idea-rt.jar" />
         <fileset file="${git4idea_home}/lib/git4idea.jar" />
         <fileset file="${git4idea_home}/lib/ini4j-0.5.2-patched.jar" />
-        <fileset file="${git4idea_home}/lib/org.eclipse.jgit-2.1.0.201209190230-r.jar" />
         <fileset file="${git4idea_home}/lib/resources_en.jar" />
         <fileset file="${git4idea_home}/lib/trilead-ssh2.jar" />
+        <fileset file="${git4idea_home}/lib/remote-servers-git.jar" />
+        <fileset file="${artifacts.mps}/lib/annotations.jar" />
+        <fileset file="${artifacts.mps}/lib/jdom.jar" />
+        <fileset file="${artifacts.mps}/lib/log4j.jar" />
+        <fileset file="${artifacts.mps}/lib/ecj-4.4.jar" />
+        <fileset file="${artifacts.mps}/lib/trove4j.jar" />
+        <fileset file="${artifacts.mps}/lib/xstream-1.4.3.jar" />
+        <fileset file="${artifacts.mps}/lib/asm-all.jar" />
+        <fileset file="${artifacts.mps}/lib/diffutils-1.2.1.jar" />
       </classpath>
     </javac>
+    <copy todir="${build.tmp}/java/out/git4idea.mpsbl.stubs">
+      <fileset dir="${basedir}/git4idea.mpsbl.stubs/solutions/git4idea.mpsbl.stubs/source_gen" excludes="**/*.java" />
+    </copy>
   </target>
   
   <target name="cleanSources">
