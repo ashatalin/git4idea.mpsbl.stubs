@@ -4,16 +4,18 @@
   <property name="build.tmp" location="${build.dir}/tmp/git4idea.mpsbl.stubs.usage" />
   <property name="build.layout" location="${build.dir}/artifacts/git4idea.mpsbl.stubs.usage" />
   <property name="mps_home" location="${basedir}/../../MPS_executables/3.2.1/MPS 3.2.app/Contents" />
+  <property name="IDEA_gitplugin_stubs_artifacts" location="${mps_home}/plugins" />
   <property name="git4idea_bl_stubs_artifacts" location="${basedir}/build/artifacts/git4idea.mpsbl.stubs" />
-  <property name="artifacts.git4idea.mpsbl.stubs" location="${git4idea_bl_stubs_artifacts}" />
   <property name="artifacts.mps" location="${mps_home}" />
-  <property file="${artifacts.git4idea.mpsbl.stubs}/build.properties" prefix="import.git4idea.mpsbl.stubs" />
-  <property name="mps.build.number" value="${import.git4idea.mpsbl.stubs.mps.build.number}" />
-  <property name="mps.date" value="${import.git4idea.mpsbl.stubs.mps.date}" />
-  <property name="mps.build.vcs.number" value="${import.git4idea.mpsbl.stubs.mps.build.vcs.number}" />
-  <property name="mps.teamcity.buildConfName" value="${import.git4idea.mpsbl.stubs.mps.teamcity.buildConfName}" />
-  <property name="mps.idea.platform.build.number" value="${import.git4idea.mpsbl.stubs.mps.idea.platform.build.number}" />
-  <property name="mpsBootstrapCore.version" value="${import.git4idea.mpsbl.stubs.mpsBootstrapCore.version}" />
+  <property name="artifacts.IDEA_gitplugin_subs" location="${IDEA_gitplugin_stubs_artifacts}" />
+  <property name="artifacts.git4idea.mpsbl.stubs" location="${git4idea_bl_stubs_artifacts}" />
+  <property file="${artifacts.mps}/build.properties" prefix="import.mps" />
+  <property name="mps.build.number" value="${import.mps.mps.build.number}" />
+  <property name="mps.date" value="${import.mps.mps.date}" />
+  <property name="mps.build.vcs.number" value="${import.mps.mps.build.vcs.number}" />
+  <property name="mps.teamcity.buildConfName" value="${import.mps.mps.teamcity.buildConfName}" />
+  <property name="mps.idea.platform.build.number" value="${import.mps.mps.idea.platform.build.number}" />
+  <property name="mpsBootstrapCore.version" value="${import.mps.mpsBootstrapCore.version}" />
   
   <path id="path.mps.ant.path">
     <pathelement location="${artifacts.mps}/lib/ant/lib/ant-mps.jar" />
@@ -132,6 +134,7 @@
   <target name="generate" depends="declare-mps-tasks, fetchDependencies">
     <echo message="generating" />
     <generate strictMode="true" parallelMode="true" parallelThreads="8" useInplaceTransform="false" hideWarnings="false" createStaticRefs="true" fork="true" targetJavaVersion="1.6">
+      <plugin path="${artifacts.IDEA_gitplugin_subs}/git4idea" />
       <plugin path="${artifacts.mps}/plugins/mps-build" />
       <plugin path="${artifacts.mps}/plugins/mps-core/META-INF/plugin.xml/../.." />
       <plugin path="${build.tmp}/deps/git4idea.mpsbl.stubs/git4idea.mpsbl.stubs.zip/git4idea.mpsbl.stubs" />
@@ -205,6 +208,7 @@
         <arg value="-Xmx512m" />
       </jvmargs>
       <macro name="mps_home" path="${mps_home}" />
+      <macro name="IDEA_gitplugin_stubs_artifacts" path="${IDEA_gitplugin_stubs_artifacts}" />
       <macro name="git4idea_bl_stubs_artifacts" path="${git4idea_bl_stubs_artifacts}" />
     </generate>
   </target>
@@ -235,12 +239,12 @@
         <fileset file="${artifacts.mps}/lib/mps-platform.jar" />
         <fileset file="${artifacts.mps}/lib/mps-icons.jar" />
         <fileset file="${artifacts.mps}/lib/mps-workbench.jar" />
-        <fileset file="${artifacts.git4idea.mpsbl.stubs}/git4idea_jars/git4idea-rt.jar" />
-        <fileset file="${artifacts.git4idea.mpsbl.stubs}/git4idea_jars/git4idea.jar" />
-        <fileset file="${artifacts.git4idea.mpsbl.stubs}/git4idea_jars/ini4j-0.5.2-patched.jar" />
-        <fileset file="${artifacts.git4idea.mpsbl.stubs}/git4idea_jars/resources_en.jar" />
-        <fileset file="${artifacts.git4idea.mpsbl.stubs}/git4idea_jars/trilead-ssh2.jar" />
-        <fileset file="${artifacts.git4idea.mpsbl.stubs}/git4idea_jars/remote-servers-git.jar" />
+        <fileset file="${artifacts.IDEA_gitplugin_subs}/git4idea/lib/git4idea-rt.jar" />
+        <fileset file="${artifacts.IDEA_gitplugin_subs}/git4idea/lib/git4idea.jar" />
+        <fileset file="${artifacts.IDEA_gitplugin_subs}/git4idea/lib/ini4j-0.5.2-patched.jar" />
+        <fileset file="${artifacts.IDEA_gitplugin_subs}/git4idea/lib/resources_en.jar" />
+        <fileset file="${artifacts.IDEA_gitplugin_subs}/git4idea/lib/trilead-ssh2.jar" />
+        <fileset file="${artifacts.IDEA_gitplugin_subs}/git4idea/lib/remote-servers-git.jar" />
         <fileset file="${artifacts.mps}/lib/log4j.jar" />
         <fileset file="${artifacts.mps}/lib/annotations.jar" />
         <fileset file="${artifacts.mps}/lib/jdom.jar" />
@@ -279,12 +283,12 @@
         <path location="${basedir}/git4idea.mpsbl.stubs.usage/solutions/git4idea.mpsbl.stubs.usage.build/source_gen" />
       </src>
       <classpath>
-        <fileset file="${artifacts.git4idea.mpsbl.stubs}/git4idea_jars/git4idea-rt.jar" />
-        <fileset file="${artifacts.git4idea.mpsbl.stubs}/git4idea_jars/git4idea.jar" />
-        <fileset file="${artifacts.git4idea.mpsbl.stubs}/git4idea_jars/ini4j-0.5.2-patched.jar" />
-        <fileset file="${artifacts.git4idea.mpsbl.stubs}/git4idea_jars/resources_en.jar" />
-        <fileset file="${artifacts.git4idea.mpsbl.stubs}/git4idea_jars/trilead-ssh2.jar" />
-        <fileset file="${artifacts.git4idea.mpsbl.stubs}/git4idea_jars/remote-servers-git.jar" />
+        <fileset file="${artifacts.IDEA_gitplugin_subs}/git4idea/lib/git4idea-rt.jar" />
+        <fileset file="${artifacts.IDEA_gitplugin_subs}/git4idea/lib/git4idea.jar" />
+        <fileset file="${artifacts.IDEA_gitplugin_subs}/git4idea/lib/ini4j-0.5.2-patched.jar" />
+        <fileset file="${artifacts.IDEA_gitplugin_subs}/git4idea/lib/resources_en.jar" />
+        <fileset file="${artifacts.IDEA_gitplugin_subs}/git4idea/lib/trilead-ssh2.jar" />
+        <fileset file="${artifacts.IDEA_gitplugin_subs}/git4idea/lib/remote-servers-git.jar" />
         <fileset file="${build.tmp}/deps/git4idea.mpsbl.stubs/git4idea.mpsbl.stubs.zip/git4idea.mpsbl.stubs/languages/git4idea.mpsbl.stubs.jar" />
       </classpath>
     </javac>

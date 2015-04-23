@@ -8,6 +8,7 @@
   <imports>
     <import index="ha42" ref="r:033a9404-186e-4e99-ba7f-cfff7467d710(git4idea.mpsbl.stubs)" />
     <import index="ffeo" ref="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)" />
+    <import index="5be0" ref="r:c06b794e-12d6-4dfd-a86a-1ecd4a099a96(git4idea.mpsbl.ideastubs)" />
   </imports>
   <registry>
     <language id="798100da-4f0a-421a-b991-71f8c50ce5d2" name="jetbrains.mps.build">
@@ -107,6 +108,18 @@
     <property role="2DA0ip" value="../../.." />
     <property role="TrG5h" value="git4idea.mpsbl.stubs.usage" />
     <property role="turDy" value="build.git4idea.mpsbl.stubs.usage.xml" />
+    <node concept="2sgV4H" id="6Y4ePHB8Oj_" role="1l3spa">
+      <ref role="1l3spb" to="ffeo:3IKDaVZmzS6" resolve="mps" />
+      <node concept="398BVA" id="645f3xJ3IgQ" role="2JcizS">
+        <ref role="398BVh" node="6Y4ePHB8On3" resolve="mps_home" />
+      </node>
+    </node>
+    <node concept="2sgV4H" id="7T_vkK88hnB" role="1l3spa">
+      <ref role="1l3spb" to="5be0:4GMBmWUHnV9" resolve="IDEA_gitplugin_subs" />
+      <node concept="398BVA" id="7T_vkK88hM7" role="2JcizS">
+        <ref role="398BVh" node="7T_vkK88hqc" resolve="IDEA_gitplugin_stubs_artifacts" />
+      </node>
+    </node>
     <node concept="10PD9b" id="645f3xJ3SGM" role="10PD9s" />
     <node concept="398rNT" id="6Y4ePHB8On3" role="1l3spd">
       <property role="TrG5h" value="mps_home" />
@@ -128,6 +141,15 @@
               </node>
             </node>
           </node>
+        </node>
+      </node>
+    </node>
+    <node concept="398rNT" id="7T_vkK88hqc" role="1l3spd">
+      <property role="TrG5h" value="IDEA_gitplugin_stubs_artifacts" />
+      <node concept="398BVA" id="7T_vkK88htI" role="398pKh">
+        <ref role="398BVh" node="6Y4ePHB8On3" resolve="mps_home" />
+        <node concept="2Ry0Ak" id="7T_vkK88hKU" role="iGT6I">
+          <property role="2Ry0Am" value="plugins" />
         </node>
       </node>
     </node>
@@ -265,12 +287,6 @@
       <ref role="1l3spb" to="ha42:386y71hdYtH" resolve="git4idea.mpsbl.stubs" />
       <node concept="398BVA" id="3HZpk1m0gH2" role="2JcizS">
         <ref role="398BVh" node="11sxh$uwsAI" resolve="git4idea_bl_stubs_artifacts" />
-      </node>
-    </node>
-    <node concept="2sgV4H" id="6Y4ePHB8Oj_" role="1l3spa">
-      <ref role="1l3spb" to="ffeo:3IKDaVZmzS6" resolve="mps" />
-      <node concept="398BVA" id="645f3xJ3IgQ" role="2JcizS">
-        <ref role="398BVh" node="6Y4ePHB8On3" resolve="mps_home" />
       </node>
     </node>
     <node concept="2_Ic$z" id="2b5RNqAzhR5" role="3989C9">

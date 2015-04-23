@@ -2,7 +2,7 @@
 <debug-info>
   <root nodeRef="r:f20ae61d-c805-4697-bb22-8fff0976b0d9(git4idea.mpsbl.stubs.usage.build)/8035612898894213068">
     <file name="git4idea.mpsbl.stubs.usage.xml">
-      <unit id="8035612898894213068" at="1,0,300,10" name="git4idea.mpsbl.stubs.usage.build.git4idea$mpsbl$stubs$usage" />
+      <unit id="8035612898894213068" at="1,0,304,10" name="git4idea.mpsbl.stubs.usage.build.git4idea$mpsbl$stubs$usage" />
     </file>
   </root>
 </debug-info>
